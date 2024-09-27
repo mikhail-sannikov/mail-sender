@@ -3,3 +3,4 @@ venv
 logs
 templates
 media
+__pycache__
