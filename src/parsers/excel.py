@@ -2,7 +2,7 @@ from openpyxl import load_workbook
 
 
 def get_receivers() -> list[tuple]:
-    wb = load_workbook('../templates/receivers.xlsx')
+    wb = load_workbook('templates/receivers.xlsx')
     emails = []
 
     for sheet_name in wb.sheetnames:

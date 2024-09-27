@@ -3,7 +3,7 @@ import logging
 smtp_logger = logging.getLogger('smtp')
 smtp_logger.setLevel(logging.DEBUG)
 
-file_handler = logging.FileHandler('../logs/smtp.log')
+file_handler = logging.FileHandler('logs/smtp.log')
 file_handler.setLevel(logging.DEBUG)
 
 console_handler = logging.StreamHandler()
