@@ -8,16 +8,20 @@ import settings
 from src.parsers import get_image_data, get_message_body
 
 
-def send_emails(sender_email: str, password: str, receivers: list[tuple]) -> None:
-    for receiver_name, receiver_email in receivers:
-        message_body = get_message_body()
+def send_emails(
+    sender_email: str, password: str, names: list[str], emails: list[str], message_body_template_name: str
+) -> None:
+    for receiver_name, receiver_email in zip(names, emails, strict=False):
+        message_body = get_message_body(message_body_template_name)
         image_path = settings.MEDIA + f'{"_".join(receiver_name.split())}.png'
         image_data = get_image_data(image_path)
 
         send_email(sender_email, password, receiver_email, message_body, image_data)
 
 
-def send_email(sender_email: str, password: str, receiver_email: str, message_body: str, image_data: ByteString) -> None:
+def send_email(
+    sender_email: str, password: str, receiver_email: str, message_body: str, image_data: ByteString
+) -> None:
     message = MIMEMultipart('alternative')
 
     message['Subject'] = 'MEETUP ITCODE'

@@ -24,7 +24,7 @@ select = [  # https://docs.astral.sh/ruff/rules/
     'ISC002',  # implicit-str-concat
     'ISC003',
 ]
-ignore = ['ANN401', 'B904', 'DJ008', 'DJ001']
+ignore = ['ANN401', 'B904', 'DJ008', 'DJ001', 'T201']
 preview = true
 
 [lint.flake8-quotes]
