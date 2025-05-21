@@ -1,7 +1,7 @@
 exclude = [
-    '.cache/*',
-    'venv',
-    '__init__.py',
+    '.cache/',
+    '.venv/',
+    'venv/',
 ]
 
 line-length = 120
@@ -9,22 +9,22 @@ indent-width = 4
 target-version = 'py312'
 
 [lint]
-select = [  # https://docs.astral.sh/ruff/rules/
-    'F',  # pyflakes
-    'E',  # pycodestyle errors
-    'W',  # pycodestyle warnings
-    'I',  # isort
-    'Q',  # quotes
-    'TID',  # tidy imports
-    'ANN',  # annotations
-    'DJ',  # django
-    'T20',  # print
-    'B',  # bugbear
-    'SIM',  # simplify,
-    'ISC002',  # implicit-str-concat
-    'ISC003',
+select = [
+    'F', # pyflakes
+    'E', # pycodestyle errors
+    'W', # pycodestyle warnings
+    'I', # isort
+    'Q', # quotes
+    'TID', # tidy imports
+    'ANN', # annotations
+    'DJ', # django
+    'T20', # print
+    'B', # bugbear
+    'SIM', # simplify,
+    'ISC002', # implicit-str-concat
+    'ISC003',  # implicit-str-concat
 ]
-ignore = ['ANN401', 'B904', 'DJ008', 'DJ001', 'T201']
+ignore = ['ANN401', 'B904', 'DJ008', 'DJ001']
 preview = true
 
 [lint.flake8-quotes]
