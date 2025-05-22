@@ -26,7 +26,7 @@ LOGGING_CONFIG = {
     'loggers': {
         'smtp': {
             'level': 'DEBUG',
-            'handlers': ['smtp_file'],
+            'handlers': ['console', 'smtp_file'],
             'propagate': False,
         },
     },

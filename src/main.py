@@ -3,7 +3,7 @@ import logging.config
 import ttkbootstrap as ttk
 
 from apps.auth.gui.windows import create_login_window
-from loggers.config import LOGGING_CONFIG
+from config.logging import LOGGING_CONFIG
 
 
 def main() -> None:

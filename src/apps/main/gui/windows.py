@@ -7,7 +7,7 @@ from ttkbootstrap import Window
 from apps.main.gui import commands
 
 
-def create_main_window(root: Window, sender_email: str) -> None:
+def create_main_window(root: Window, sender_email: str, password: str) -> None:
     root.deiconify()
     root.title('Отправка письма')
     root.geometry('700x400')
@@ -69,6 +69,6 @@ def create_main_window(root: Window, sender_email: str) -> None:
         frame,
         text='Отправить письма',
         style='primary.Outline.TButton',
-        command=partial(commands.send, emails_file_path, html_file_path, sender_email),
+        command=partial(commands.send, emails_file_path, html_file_path, sender_email, password),
     )
     send_button.grid(row=5, column=0, columnspan=2, pady=20)
