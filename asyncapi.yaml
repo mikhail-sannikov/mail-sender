@@ -5,7 +5,7 @@ info:
   description: WebSocket события в проекте
 
 servers:
-  prod:
+  production:
     url: ws://yourhost/socket.io
     protocol: socket.io
 
@@ -14,20 +14,27 @@ channels:
     subscribe:
       summary: Получение сообщений
       message:
-        name: message
-        payload:
-          type: object
-          properties:
-            user:
-              type: string
-            text:
-              type: string
+        $ref: '#/components/messages/Message'
     publish:
       summary: Отправка сообщений
       message:
-        name: message
-        payload:
-          type: object
-          properties:
-            text:
-              type: string
+        $ref: '#/components/messages/MessageInput'
+
+components:
+  messages:
+    Message:
+      name: message
+      payload:
+        type: object
+        properties:
+          user:
+            type: string
+          text:
+            type: string
+    MessageInput:
+      name: message
+      payload:
+        type: object
+        properties:
+          text:
+            type: string
