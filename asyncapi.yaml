@@ -1,0 +1,33 @@
+asyncapi: '2.6.0'
+info:
+  title: Socket.IO API
+  version: '1.0.0'
+  description: WebSocket события в проекте
+
+servers:
+  prod:
+    url: ws://yourhost/socket.io
+    protocol: socket.io
+
+channels:
+  message:
+    subscribe:
+      summary: Получение сообщений
+      message:
+        name: message
+        payload:
+          type: object
+          properties:
+            user:
+              type: string
+            text:
+              type: string
+    publish:
+      summary: Отправка сообщений
+      message:
+        name: message
+        payload:
+          type: object
+          properties:
+            text:
+              type: string
